@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session Pro — Скачат кунед</title>
+<meta name="description" content="Session Pro-ро мустақиман скачат кунед. Бехатар, тез ва бе реклама.">
+<style>
+  :root{
+    --bg: #0D1117;
+    --bg-elev: #141B24;
+    --border: #22303C;
+    --text: #E6EDF3;
+    --text-dim: #8B98A5;
+    --accent: #3DDC97;
+    --accent-dim: #2A9D6F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding: 28px 0 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:-0.01em;
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 64px 0 40px;
+    text-align: center;
+  }
+  .icon{
+    width: 88px; height: 88px;
+    margin: 0 auto 28px;
+    border-radius: 22px;
+    background: linear-gradient(155deg, #1B2530, var(--bg-elev));
+    border: 1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 38px;
+  }
+  h1{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .version-pill{
+    display:inline-block;
+    margin-top: 14px;
+    padding: 5px 13px;
+    border-radius: 100px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .tagline{
+    margin-top: 18px;
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------- Download button ---------- */
+  .download-box{
+    margin-top: 36px;
+  }
+  .btn-download{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 17px 24px;
+    background: var(--accent);
+    color: #04140D;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 14px;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-download:hover{ background: #4EE9A8; }
+  .btn-download:active{ transform: scale(0.97); }
+  .btn-download svg{ width: 20px; height: 20px; flex-shrink:0; }
+
+  .meta-row{
+    margin-top: 14px;
+    display:flex;
+    justify-content:center;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* ---------- Features ---------- */
+  .features{
+    margin-top: 72px;
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .feature{
+    background: var(--bg-elev);
+    padding: 20px 22px;
+    display:flex;
+    gap: 16px;
+    align-items:flex-start;
+  }
+  .feature .f-icon{
+    font-size: 20px;
+    line-height:1;
+    margin-top:2px;
+  }
+  .feature h3{
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .feature p{
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+
+  /* ---------- Install steps ---------- */
+  .steps{
+    margin-top: 56px;
+  }
+  .steps h2{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+  ol{
+    list-style: none;
+    counter-reset: step;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+  ol li{
+    counter-increment: step;
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    font-size: 14.5px;
+    color: var(--text-dim);
+  }
+  ol li::before{
+    content: counter(step);
+    flex-shrink:0;
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight:700;
+    font-size: 13px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  ol li strong{ color: var(--text); font-weight:600; }
+
+  /* ---------- Video ---------- */
+  .video-section{
+    margin-top: 56px;
+  }
+  .video-section h2{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .video-caption{
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+  }
+  .video-frame{
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+  }
+  .video-frame video{
+    display:block;
+    width:100%;
+    max-height: 420px;
+    background: #000;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top: 80px;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--border);
+    text-align:center;
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+  footer a{ color: var(--text-dim); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span>Session Pro</div>
+    </header>
+
+    <section class="hero">
+      <div class="icon">⚡</div>
+      <h1>Session Pro</h1>
+      <span class="version-pill">Версияи 1.0</span>
+      <p class="tagline">Барномаро аз ин ҷо гиред. Осон аст — фақат як бор тугмаро пахш кунед!</p>
+
+      <div class="download-box">
+        <a class="btn-download" id="downloadBtn" href="#" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Скачат кардан
+        </a>
+        <div class="meta-row">
+          <span>Android APK</span>
+          <span>·</span>
+          <span>~25 MB</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <div class="f-icon">🔒</div>
+        <div><h3>Бехатар</h3><p>Ҳеҷ вирус нест. Барнома тоза ва бехатар аст.</p></div>
+      </div>
+      <div class="feature">
+        <div class="f-icon">🚀</div>
+        <div><h3>Тез</h3><p>Як бор пахш мекунӣ, гирифтан ҳозир сар мешавад.</p></div>
+      </div>
+      <div class="feature">
+        <div class="f-icon">🆓</div>
+        <div><h3>Ройгон</h3><p>Ҳеҷ пул лозим нест. Ҳама чиз ройгон аст.</p></div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <h2>Чӣ хел насб кунам?</h2>
+      <ol>
+        <li><span>Тугмаи <strong>Скачат кардан</strong>-ро пахш кун ва каме сабр кун.</span></li>
+        <li><span>Ба <strong>Танзимот → Бехатарӣ</strong> дар телефонат рав ва иҷозат деҳ, ки барнома насб шавад.</span></li>
+        <li><span>Файлеро, ки гирифтӣ, кушо ва тугмаи <strong>Насб кардан</strong>-ро пахш кун. Тайёр!</span></li>
+      </ol>
+    </section>
+
+    <section class="video-section">
+      <h2>Видеои омӯзишӣ</h2>
+      <p class="video-caption">Агар навбат гум кардӣ, ин видеоро бубин — ҳама чиз қадам ба қадам нишон дода мешавад.</p>
+      <div class="video-frame">
+        <video
+          controls
+          preload="metadata"
+          poster=""
+          playsinline>
+          <source src="video/SVID_20260914_172518_1.mp4" type="video/mp4">
+          Браузери шумо видеоро дастгирӣ намекунад.
+        </video>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Session Pro. Ин сайт мустақил буда, ба Google алоқаманд нест.
+    </footer>
+  </div>
+
+<script>
+  // ЗАМЕН КУНЕД: ID-и файли Google Drive-ро дар ин ҷо гузоред
+  const GDRIVE_FILE_ID = "PUT_YOUR_FILE_ID_HERE";
+  const downloadUrl = `https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}`;
+  document.getElementById('downloadBtn').setAttribute('href', downloadUrl);
+</script>
+</body>
+</html>
